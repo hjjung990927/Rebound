@@ -19,7 +19,7 @@ public class MemberMapperTests {
         memberDTO.setMemberName("단위테스트");
         memberDTO.setMemberEmail("test1@gmail.com");
         memberDTO.setMemberPassword("123456");
-        memberDTO.setMemberPhoneNumber("01012345678");
+        memberDTO.setMemberPhoneNumber("01098765432");
 
         memberMapper.insertMember(memberDTO);
     }

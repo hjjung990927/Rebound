@@ -33,18 +33,18 @@ public class AdminTest {
     @Autowired
     private MemberMapper memberMapper;
 
-    @Test
-    public void insertMemberTest(){
-        for (int i=0;i<111;i++) {
-            MemberDTO memberDTO = new MemberDTO();
-            memberDTO.setMemberName("일반회원테스트");
-            memberDTO.setMemberEmail("test1@gmail.com"+i);
-            memberDTO.setMemberPassword("123456");
-            memberDTO.setMemberPhoneNumber("010123415645"+i);
-
-            memberMapper.insertMember(memberDTO);
-        }
-    }
+//    @Test
+//    public void insertMemberTest(){
+//        for (int i=0;i<111;i++) {
+//            MemberDTO memberDTO = new MemberDTO();
+//            memberDTO.setMemberName("일반회원테스트");
+//            memberDTO.setMemberEmail("test10000@gmail.com"+i);
+//            memberDTO.setMemberPassword("123456");
+//            memberDTO.setMemberPhoneNumber("010123415645"+i);
+//
+//            memberMapper.insertMember(memberDTO);
+//        }
+//    }
     @Test
     public void test(){
         LocalDateTime  now = LocalDateTime.now();

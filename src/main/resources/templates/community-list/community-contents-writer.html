@@ -13,10 +13,10 @@
 <body>
 <div id="app" data-is-loaded="true">
     <th:block th:if="${session.member != null || session.counselor != null}">
-        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+        <header th:replace="~{/main-page/header2 :: #app-header}"></header>
     </th:block>
     <th:block th:unless="${session.member !=null || session.counselor != null}">
-        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+        <header th:replace="~{/main-page/header :: #app-header}"></header>
     </th:block>
     <div class="__cov-progress" style="background-color: rgb(105, 59, 242); position: fixed; top: 0px; left: 0px; width: 0%; height: 2px;"></div>
     <ul class="prisma-toast-container"></ul>

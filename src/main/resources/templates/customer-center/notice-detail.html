@@ -23,10 +23,10 @@
 <body>
     <body class="body-div">
         <th:block th:if="${session.member != null}">
-            <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+            <header th:replace="~{/main-page/header2 :: #app-header}"></header>
         </th:block>
         <th:block th:unless="${session.member !=null}">
-            <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+            <header th:replace="~{/main-page/header :: #app-header}"></header>
         </th:block>
         <main role="main">
             <div class="container-divider"></div>

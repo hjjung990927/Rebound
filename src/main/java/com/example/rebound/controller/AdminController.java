@@ -34,7 +34,7 @@ public class AdminController {
         memberDTO.setRemember(remember);
         memberDTO.setMemberEmail(rememberedEmail);
         model.addAttribute("memberDTO", memberDTO);
-        return "/admin/admin-login";
+        return "admin/admin-login";
     }
 //    로그인 성공시 관리자 메인 페이지 이동
     @PostMapping("admin-login")
@@ -63,18 +63,18 @@ public class AdminController {
                 response.addCookie(rememberCookie);
             }
 
-            return new RedirectView("/admin/admin-mainPage");
-        };return new RedirectView("/admin/admin-login");
+            return new RedirectView("admin/admin-mainPage");
+        };return new RedirectView("admin/admin-login");
     }
 //    관리자 메인페이지 이동
     @GetMapping("admin-mainPage")
     public String goToAdminMainPage(){
-        return "/admin/admin-mainPage";
+        return "admin/admin-mainPage";
     }
 //    관리자 공지사항 목록 이동
     @GetMapping("notice-list/{page}")
     public String goToNoticeList(){
-        return "/admin/notice-list";
+        return "admin/notice-list";
     }
 //    관리자 공지사항 상세 이동
     @GetMapping("notice-detail")
@@ -87,32 +87,32 @@ public class AdminController {
 //    상담하기 목록 이동
     @GetMapping("counseling-list/{page}")
     public String goToCounselingList(){
-        return "/admin/counseling-list";
+        return "admin/counseling-list";
     }
 //    상담사 댓글 이동
     @GetMapping("counselor-apply/{page}")
     public String goToCounselingApply(){
-        return "/admin/counselor-apply";
+        return "admin/counselor-apply";
     }
 //    상담사 목록 이동
     @GetMapping("counselor-list/{page}")
     public String goToCounselorList(){
-        return "/admin/counselor-list";
+        return "admin/counselor-list";
     }
 //    일반 멤버 목록 이동
     @GetMapping("general-memberlist/{page}")
     public String goToGeneralMemberList(){
 
-        return "/admin/general-memberlist";
+        return "admin/general-memberlist";
     }
 //    멘토 목록 이동
     @GetMapping("mentor-memberlist/{page}")
     public String goToMentorMemberList(){
-        return "/admin/mentor-memberlist";
+        return "admin/mentor-memberlist";
     }
 //    구독자 목록 이동
     @GetMapping("subscribe-memberlist/{page}")
     public String goToSubscribeMemberList(){
-        return "/admin/subscribe-memberlist";
+        return "admin/subscribe-memberlist";
     }
 }

@@ -23,26 +23,26 @@ public class MainPageController {
         model.addAttribute("posts", mainpageService.postPreview());
         model.addAttribute("todayMessages", mainpageService.todayMessagePreview());
         model.addAttribute("notices", mainpageService.noticePreview());
-        return "/main-page/page";
+        return "main-page/page";
     }
 
 
     @GetMapping("today-message")
     public String goToTodayMessage() {
-        return "/counselor-list/good-words";
+        return "counselor-list/good-words";
     }
 
     @GetMapping("/community-list/community-contents-member")
     public String goToCommunityContentsMember() {
-        return "/community-list/community-contents-member";
+        return "community-list/community-contents-member";
     }
     @GetMapping("/counselor-list/good-words-member")
     public String goToGoodWordsMember() {
-        return "/counselor-list/good-words-member";
+        return "counselor-list/good-words-member";
     }
     @GetMapping("service/service-intro")
     public String goToServiceIntro() {
-        return "/service/service-intro";
+        return "service/service-intro";
     }
 
 }

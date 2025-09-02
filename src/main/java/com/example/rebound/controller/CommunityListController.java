@@ -40,7 +40,7 @@ public class CommunityListController {
     @PostMapping("failure-write")
     public RedirectView write(PostDTO postDTO){
         communityPostService.write(postDTO);
-        return new RedirectView("/community-list/" + postDTO.getId());
+        return new RedirectView("community-list/" + postDTO.getId());
     }
 
 //    게시글 작성자 기준 조회
@@ -61,13 +61,13 @@ public class CommunityListController {
     @PostMapping("failure-update")
     public RedirectView updatePost(PostDTO postDTO) {
         communityPostService.updatePost(postDTO);
-        return new RedirectView("/community-list/" + postDTO.getId());
+        return new RedirectView("community-list/" + postDTO.getId());
     }
 
 //    게시글 삭제
     @GetMapping("/delete/{id}")
     public RedirectView delete(@PathVariable Long id){
         communityPostService.delete(id);
-        return new RedirectView("/community-list/community-posts");
+        return new RedirectView("community-list/community-posts");
     }
 }

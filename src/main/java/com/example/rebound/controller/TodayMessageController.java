@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TodayMessageController {
     @GetMapping("good-words")
     public String goToGoodWords() {
-        return "/counselor-list/good-words";
+        return "counselor-list/good-words";
     }
 }

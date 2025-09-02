@@ -81,7 +81,7 @@ public class CounselorController {
     @PostMapping("join")
     public RedirectView joinCounselor(CounselorDTO counselorDTO, @RequestParam("file") List<MultipartFile> counselorQualificationsFiles) {
         counselorService.joinCounselor(counselorDTO, counselorQualificationsFiles);
-        return new RedirectView("/counselor/login");
+        return new RedirectView("counselor/login");
     }
 
     //    로그인 페이지로 이동
@@ -175,7 +175,7 @@ public class CounselorController {
         counselorService.updateCounselorEmail(counselorDTO);
         counselor.setCounselorEmail(counselorDTO.getCounselorEmail());
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/counselor/mypage/info");
+        return new RedirectView("counselor/mypage/info");
     }
 
 //    상담사 전화번호 변경
@@ -186,14 +186,14 @@ public class CounselorController {
         counselorService.updateCounselorPhoneNumber(counselorDTO);
         counselor.setCounselorPhoneNumber(counselorDTO.getCounselorPhoneNumber());
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/counselor/mypage/info");
+        return new RedirectView("counselor/mypage/info");
     }
 
     //로그아웃
     @GetMapping("logout")
     public RedirectView logout(){
         session.invalidate();
-        return new RedirectView("/counselor/login");
+        return new RedirectView("counselor/login");
     }
 
 }

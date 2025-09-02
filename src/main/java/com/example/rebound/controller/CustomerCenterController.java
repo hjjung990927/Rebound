@@ -27,7 +27,7 @@ public class CustomerCenterController {
     //    공지사항 목록
     @GetMapping("notice-list/{page}")
     public String goTONoticeList(){
-        return "/customer-center/notice-list";
+        return "customer-center/notice-list";
     }
 //    공지사항 상세
     @GetMapping("notice-detail")
@@ -35,12 +35,12 @@ public class CustomerCenterController {
 
         System.out.println(adminService.noticeDetail(id));
         model.addAttribute("notice",adminService.noticeDetail(id));
-        return "/customer-center/notice-detail";
+        return "customer-center/notice-detail";
     }
 //    문의
     @GetMapping("inquiry")
     public String goToInquiry() {
-        return "/customer-center/inquiry";
+        return "customer-center/inquiry";
     }
 //    문의글 작성
     @PostMapping("inquiry")
@@ -51,14 +51,14 @@ public class CustomerCenterController {
     }
     @GetMapping("questions-list")
     public String goToQuestionsList() {
-        return "/customer-center/questions-list";
+        return "customer-center/questions-list";
     }
     @GetMapping("questions-detail")
     public String goToQuestionsDetail() {
-        return "/customer-center/questions-detail";
+        return "customer-center/questions-detail";
     }
     @GetMapping("search")
     public String goToSearch() {
-        return "/customer-center/search";
+        return "customer-center/search";
     }
 }

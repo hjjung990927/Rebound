@@ -49,7 +49,7 @@ public class MemberController {
     @PostMapping("join")
     public RedirectView MemberJoin(MemberDTO memberDTO) {
         memberService.joinMember(memberDTO);
-        return new RedirectView("/member/login");
+        return new RedirectView("member/login");
     }
 
 //    이메일 중복 검사
@@ -196,7 +196,7 @@ public class MemberController {
         memberService.memberRename(memberDTO);
         member.setMemberName(memberDTO.getMemberName());
         session.setAttribute("member", member);
-        return new RedirectView("/member/mypage/set");
+        return new RedirectView("member/mypage/set");
     }
 
     //    전화번호 수정
@@ -208,7 +208,7 @@ public class MemberController {
         memberService.updateMemberPhoneNumber(memberDTO);
         member.setMemberPhoneNumber(memberDTO.getMemberPhoneNumber());
         session.setAttribute("member", member);
-        return new RedirectView("/member/mypage/info");
+        return new RedirectView("member/mypage/info");
     }
 //    이메일 수정
     @PostMapping("update/email")
@@ -218,7 +218,7 @@ public class MemberController {
         memberService.updateMemberEmail(memberDTO);
         member.setMemberEmail(memberDTO.getMemberEmail());
         session.setAttribute("member", member);
-        return new RedirectView("/member/mypage/info");
+        return new RedirectView("member/mypage/info");
     }
 
 
@@ -274,6 +274,6 @@ public class MemberController {
 
             response.addCookie(accessTokenCookie);
         }
-        return new RedirectView("/member/login");
+        return new RedirectView("member/login");
     }
 }

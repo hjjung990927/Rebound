@@ -33,7 +33,7 @@ public class MailController {
         boolean counselorExists = counselorService.isExistCounselorEmail(email);
 
         if (!memberExists && !counselorExists) {
-            return new RedirectView("/mail/notfound-email");
+            return new RedirectView("mail/notfound-email");
         }
 
         if (memberExists) {
@@ -44,7 +44,7 @@ public class MailController {
             mailService.sendMail(email, request, response);
         }
 
-        return new RedirectView("/member/find-confirm");
+        return new RedirectView("member/find-confirm");
     }
 
 //    메일 인증
@@ -54,7 +54,7 @@ public class MailController {
                                 String memberEmail,
                                 HttpServletResponse response){
         if(cookieCode == null || cookieCode.isEmpty()){
-            return new RedirectView("/mail/find-fail");
+            return new RedirectView("mail/find-fail");
         }
 
         if(cookieCode.equals(code)){
@@ -62,10 +62,10 @@ public class MailController {
             cookie.setMaxAge(0);
             cookie.setPath("/");
             response.addCookie(cookie);
-            return new RedirectView("/mail/new-password?memberEmail=" + memberEmail);
+            return new RedirectView("mail/new-password?memberEmail=" + memberEmail);
         }
 
-        return new RedirectView("/mail/find-fail");
+        return new RedirectView("mail/find-fail");
     }
 
 //    비밀번호 변경

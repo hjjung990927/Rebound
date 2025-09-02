@@ -16,10 +16,10 @@
     <div id="app">
         <!-- header -->
         <th:block th:if="${session.member != null || session.counselor != null}">
-            <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+            <header th:replace="~{main-page/header2 :: #app-header}"></header>
         </th:block>
         <th:block th:unless="${session.member !=null || session.counselor != null}">
-            <header th:replace="~{/main-page/header :: #app-header}"></header>
+            <header th:replace="~{main-page/header :: #app-header}"></header>
         </th:block>
         <div id="app-body">
             <div class="home">
@@ -60,7 +60,7 @@
                     <span class="category-edge"></span>
                     <ul class="main-category category-list" id="main-category">
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <span class="sg-icon-v1" style="width: 2.5rem; height: 2.5rem; --svg-color: #293341;">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/대인관계.png" alt="카테고리1">
                                     <p class="category-title">대인관계</p>
@@ -83,7 +83,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/가족.png" alt="카테고리2">
                                     <p class="category-title">가족</p>
@@ -91,7 +91,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/연애.png" alt="카테고리3">
                                     <p class="category-title">연애</p>
@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/육아출산.png" alt="카테고리4">
                                     <p class="category-title">육아/출산</p>
@@ -107,7 +107,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/신체건강.png" alt="카테고리5">
                                     <p class="category-title">신체건강</p>
@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/정신건강.png" alt="카테고리6">
                                     <p class="category-title">정신건강</p>
@@ -123,7 +123,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/금전사업.png" alt="카테고리7">
                                     <p class="category-title">금전/사업</p>
@@ -131,7 +131,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/자아성격.png" alt="카테고리8">
                                     <p class="category-title">자아/성격</p>
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/취업진로.png" alt="카테고리9">
                                     <p class="category-title">취업/진로</p>
@@ -147,7 +147,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/펫로스.png" alt="카테고리10">
                                     <p class="category-title">펫로스</p>
@@ -155,7 +155,7 @@
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="/community-list/community-posts">
+                            <a href="community-list/community-posts">
                                 <div class="category-icon">
                                     <img class="category-img" width="40" height="40" src="/images/main/학업고시.png" alt="기타">
                                     <p class="category-title">학업/고시</p>
@@ -177,7 +177,7 @@
                             <div class="slick-list">
                                 <div class="slick-track" style="width: 8730px; opacity: 1; transform: translate3d(-970px, 0px, 0px);">
                                     <!--  -->
-                                    <a href="/customer-center/notice-detail">
+                                    <a href="customer-center/notice-detail">
                                         <div class="slick-slide" tabindex="-1" data-index="0" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -189,7 +189,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="/customer-center/notice-detail">
+                                    <a href="customer-center/notice-detail">
                                         <div class="slick-slide" tabindex="-1" data-index="1" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -200,7 +200,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="/customer-center/notice-detail">
+                                    <a href="customer-center/notice-detail">
                                         <div class="slick-slide" tabindex="-1" data-index="2" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -211,7 +211,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="/customer-center/notice-detail">
+                                    <a href="customer-center/notice-detail">
                                         <div class="slick-slide" tabindex="-1" data-index="3" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -222,7 +222,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="/customer-center/notice-detail">
+                                    <a href="customer-center/notice-detail">
                                         <div class="slick-slide" tabindex="-1" data-index="4" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -253,7 +253,7 @@
                 <div class="main-community slide-knowhow-list container">
                     <section class="header short-bottom">
                         <h2 class="title">리바운드 커뮤니티에 물어보세요.</h2>
-                        <a href="/community-list/community-posts" class="go-list">
+                        <a href="community-list/community-posts" class="go-list">
                             <span>전체보기</span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon purple" data-v-24236cc4="" data-v-17afdf1c="">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5008 12.077C17.4995 12.3557 17.3875 12.6224 17.1895 12.8184L9.73949 20.1961C9.3272 20.6044 8.66197 20.6011 8.25368 20.1888C7.84539 19.7765 7.84863 19.1113 8.26093 18.703L14.9644 12.0647L8.25372 5.28886C7.84541 4.87658 7.84862 4.21136 8.2609 3.80304C8.67318 3.39473 9.3384 3.39795 9.74672 3.81023L17.1967 11.3326C17.3928 11.5306 17.5022 11.7984 17.5008 12.077Z" fill="black"></path>
@@ -350,7 +350,7 @@
                             만나 보세요
                         </p>
                         <div class="pro-signup-btn">
-                            <a href="/counselor/join" class="btn btn-primary">상담사 가입</a>
+                            <a href="counselor/join" class="btn btn-primary">상담사 가입</a>
                         </div>
                     </div>
                     <div class="slick-slider slick-initialized">
@@ -400,7 +400,7 @@
             </div>
         </div>
         <!-- footer -->
-        <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+        <footer th:replace="~{main-page/footer.html :: #app-footer}"></footer>
     </div>
 </body>
 <script th:inline="javascript">

@@ -10,12 +10,12 @@
 </head>
 <body class="post-write hide-mobile-global-header">
 <div id="app">
-    <header th:replace="~{/main-page/header2}"></header>
+    <header th:replace="~{main-page/header2}"></header>
     <div id="app-body">
         <div class="community-container container">
             <div class="soomgo-life-container">
                 <!-- update form -->
-                <form th:action="@{/community-list/failure-update}" method="post" th:object="${post}">
+                <form th:action="@{community-list/failure-update}" method="post" th:object="${post}">
                     <input type="hidden" name="id" th:value="*{id}">
                     <section class="write-post-container">
                         <div class="select-subject-header">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <footer th:replace="~{/main-page/footer}"></footer>
+    <footer th:replace="~{main-page/footer}"></footer>
 </div>
 <div data-testid="search-service-modal" id="search-service-modal___BV_modal_outer_" style="position: absolute; z-index: 1040;" class="categoty-modal active">
     <div id="search-service-modal" role="dialog" aria-describedby="search-service-modal___BV_modal_body_" class="modal fade show search-pro-filter-modal" aria-modal="true" style="display: block;">

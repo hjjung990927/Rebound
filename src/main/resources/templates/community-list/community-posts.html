@@ -13,10 +13,10 @@
 <body class="soomgo-life-topic">
 <div id="app" data-browser="Chrome" data-is-loaded="true">
     <th:block th:if="${session.member != null || session.counselor != null}">
-        <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+        <header th:replace="~{main-page/header2 :: #app-header}"></header>
     </th:block>
     <th:block th:unless="${session.member !=null || session.counselor != null}">
-        <header th:replace="~{/main-page/header :: #app-header}"></header>
+        <header th:replace="~{main-page/header :: #app-header}"></header>
     </th:block>
     <div id="top"></div>
     <!-- body -->
@@ -31,7 +31,7 @@
                             <!-- 우측 글쓰기 버튼 -->
                             <div class="write-button-desktop">
                                 <div class="dropdown b-dropdown btn-group">
-                                    <button class="btn dropdown-toggle btn-primary" onclick="window.location.href='/community-list/failure-write'">
+                                    <button class="btn dropdown-toggle btn-primary" onclick="window.location.href='community-list/failure-write'">
                                         글쓰기
                                     </button>
                                 </div>
@@ -54,7 +54,7 @@
                                     <div class="slick-track slick-cloned">
                                         <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
                                             <div class="community-notice-wrapper" style="display: inline-block;">
-                                                <a th:href="@{/customer-center/notice-list/1}">
+                                                <a th:href="@{customer-center/notice-list/1}">
                                                     <span class="notice-title">공지</span>
                                                     <span class="notice-text">숨고생활 가이드라인 🤝</span>
                                                     <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;"></span>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
                                             <div class="community-notice-wrapper" style ="display: inline-block;">
-                                                <a th:href="@{/customer-center/notice-list/1}">
+                                                <a th:href="@{customer-center/notice-list/1}">
                                                     <span class="notice-title">공지</span>
                                                     <span class="notice-text">사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!</span>
                                                     <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;"></span>
@@ -72,7 +72,7 @@
                                         </div>
                                         <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
                                             <div class="community-notice-wrapper" style="display: inline-block;">
-                                                <a th:href="@{/customer-center/notice-list/1}">
+                                                <a th:href="@{customer-center/notice-list/1}">
                                                     <span class="notice-title">공지</span>
                                                     <span class="notice-text">숨고생활 가이드라인 🤝</span>
                                                     <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;"></span>
@@ -96,7 +96,7 @@
                                         <div class="slick-total02">
                                             <div class="slick-list slick-pick">
                                                 <div class="slick-slide" th:each="post : ${postsByViews}">
-                                                    <a th:href="@{/community-list/{id}(id=${post.id})}">
+                                                    <a th:href="@{community-list/{id}(id=${post.id})}">
                                                         <div class="curation-item">
                                                             <h3 class="prisma-typography headline16 primary" th:text="${post.postTitle}">
                                                                 제목
@@ -270,7 +270,7 @@
                 </section>
             </div>
         </div>
-        <footer th:replace="~{/main-page/footer}"></footer>
+        <footer th:replace="~{main-page/footer}"></footer>
     </div>
 </div>
 </body>

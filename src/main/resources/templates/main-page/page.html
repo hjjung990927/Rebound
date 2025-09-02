@@ -16,10 +16,10 @@
     <div id="app">
         <!-- header -->
         <th:block th:if="${session.member != null || session.counselor != null}">
-            <header th:replace="~{main-page/header2 :: #app-header}"></header>
+            <header th:replace="main-page/header2 :: app-header"></header>
         </th:block>
         <th:block th:unless="${session.member !=null || session.counselor != null}">
-            <header th:replace="~{main-page/header :: #app-header}"></header>
+            <header th:replace="main-page/header :: app-header"></header>
         </th:block>
         <div id="app-body">
             <div class="home">

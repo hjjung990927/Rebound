@@ -6,7 +6,6 @@
     <title>계정 설정</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/mypage-counselor-set.css">
-    
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
     <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
@@ -16,14 +15,17 @@
     <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
     <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
     <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
 
 </head>
 <body>
 <th:block th:if="${session.member != null || session.counselor != null}">
-            <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+            <header th:replace="~{main-page/header2 :: #app-header}"></header>
         </th:block>
         <th:block th:unless="${session.member !=null || session.counselor != null}">
-            <header th:replace="~{/main-page/header :: #app-header}"></header>
+            <header th:replace="~{main-page/header :: #app-header}"></header>
         </th:block>
     <main class="main">
         <div class="main-1">
@@ -108,21 +110,11 @@
                     </button>
                     </form>
                 </li>
-<!--                <li class="main-13">-->
-<!--                    <button class="main-14">-->
-<!--                        <p class="main-15">계정 탈퇴</p>-->
-<!--                        <div class="main-16">-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#AAB4BF">-->
-<!--                                <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                    </button>-->
-<!--                </li>-->
             </ul>
             <hr class="main-4">    
         </div>
     </main>
-<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+<footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script th:inline="javascript">
     const counselorId = [[${counselor.id}]];

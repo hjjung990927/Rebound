@@ -33,7 +33,7 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public void joinCounselor(CounselorDTO counselorDTO, List<MultipartFile> files) {
         String todayPath=getPath();
-        String rootPath="C:/reboundFile/"+todayPath;
+        String rootPath="/home/ubuntu/upload_file/"+todayPath;
 
         counselorDAO.saveCounselor(counselorDTO);
 
@@ -109,7 +109,7 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public FileDTO saveCounselorProfileFile(MultipartFile file, Long counselorId) throws IOException {
         String todayPath = getPath();
-        String rootPath = "C:/reboundFile/" + todayPath;
+        String rootPath = "/home/ubuntu/upload_file/" + todayPath;
 
         if (file.isEmpty()) {
             throw new IllegalArgumentException("파일이 비어있습니다.");

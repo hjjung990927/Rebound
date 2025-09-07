@@ -59,7 +59,7 @@ const commentService = (() => {
             console.log("추천 성공");
         } else{
             const errorMessage = await response.text();
-            console.log(errorMessage)
+            console.log(errorMessage);
             alert("이미 추천한 댓글입니다.");
         }
     };

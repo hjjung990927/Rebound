@@ -33,7 +33,7 @@ public class MailController {
         boolean counselorExists = counselorService.isExistCounselorEmail(email);
 
         if (!memberExists && !counselorExists) {
-            return new RedirectView("mail/notfound-email");
+            return new RedirectView("/mail/notfound-email");
         }
 
         if (memberExists) {
@@ -44,7 +44,7 @@ public class MailController {
             mailService.sendMail(email, request, response);
         }
 
-        return new RedirectView("member/find-confirm");
+        return new RedirectView("/member/find-confirm");
     }
 
 //    메일 인증
@@ -54,7 +54,7 @@ public class MailController {
                                 String memberEmail,
                                 HttpServletResponse response){
         if(cookieCode == null || cookieCode.isEmpty()){
-            return new RedirectView("mail/find-fail");
+            return new RedirectView("/mail/find-fail");
         }
 
         if(cookieCode.equals(code)){
@@ -62,32 +62,27 @@ public class MailController {
             cookie.setMaxAge(0);
             cookie.setPath("/");
             response.addCookie(cookie);
-            return new RedirectView("mail/new-password?memberEmail=" + memberEmail);
+            return new RedirectView("/mail/new-password?memberEmail=" + memberEmail);
         }
 
-        return new RedirectView("mail/find-fail");
+        return new RedirectView("/mail/find-fail");
     }
 
 //    비밀번호 변경
     @GetMapping("/new-password")
     public String goToNewPassword(@RequestParam String memberEmail, Model model) {
-        model.addAttribute("memberEmail", memberEmail);
-        return "member/new-password";
+        model.addAttribute("memberEmail", memberEmail); return "member/new-password";
     }
 
     @PostMapping("new-password")
-    @ResponseBody
-    public ResponseEntity<?> newPassword(@RequestBody MemberDTO memberDTO) {
+    @ResponseBody public ResponseEntity<?> newPassword(@RequestBody MemberDTO memberDTO) {
         if (memberService.isExistMemberEmail(memberDTO.getMemberEmail())) {
             memberService.updateMemberPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
         }
-
         if (counselorService.isExistCounselorEmail(memberDTO.getMemberEmail())) {
             counselorService.updateCounselorPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
         }
-
-        Map<String, String> body = new HashMap<>();
-        body.put("message", "비밀번호 변경 완료");
+        Map<String, String> body = new HashMap<>(); body.put("message", "비밀번호 변경 완료");
         return ResponseEntity.ok(body);
     }
 

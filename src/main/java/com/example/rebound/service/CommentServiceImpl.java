@@ -53,19 +53,14 @@ public class CommentServiceImpl implements CommentService {
             comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));
             comment.setLikesCount(likeDAO.getLikeCount(comment.getId()));
 
-            if(comment.getMemberProvider() != null && comment.getMemberProvider().name().equals("KAKAO")) {
-                comment.setFilePath("");
-                comment.setFileName("no-profile.png");
-            } else {
-                fileService.findFileByMemberId(comment.getMemberId())
-                        .ifPresentOrElse(fileDTO -> {
-                            comment.setFilePath(fileDTO.getFilePath());
-                            comment.setFileName(fileDTO.getFileName());
-                        }, () -> {
-                            comment.setFilePath("");
-                            comment.setFileName("no-profile.png");
-                        });
-            }
+            fileService.findFileByMemberId(comment.getMemberId())
+                    .ifPresentOrElse(fileDTO -> {
+                        comment.setFilePath(fileDTO.getFilePath());
+                        comment.setFileName(fileDTO.getFileName());
+                    }, () -> {
+                        comment.setFilePath("");
+                        comment.setFileName("no-profile.png");
+                    });
         });
 
 

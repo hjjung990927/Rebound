@@ -18,8 +18,8 @@ public class PaymentDAO {
     }
 
 //    n번째 결재
-    public void updatePaymeent(PaymentDTO paymentDTO) {
-        paymentMapper.updatePayment(paymentDTO);
+    public int updatePayment(Long memberId) {
+        return paymentMapper.updatePayment(memberId);
     }
 
 //    결제 조회

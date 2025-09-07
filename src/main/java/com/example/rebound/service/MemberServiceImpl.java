@@ -62,7 +62,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void saveKakaoProfile(MemberDTO memberDTO) {
         String todayPath = getPath();
-        String rootPath = "C:/reboundFile/" + todayPath;
+        String rootPath = "/home/ubuntu/upload_file/" + todayPath;
 
         try {
             File directory = new File(rootPath);
@@ -130,7 +130,7 @@ public class MemberServiceImpl implements MemberService {
 
         if (deleteFileOpt.isPresent()) {
             FileDTO deleteFile = deleteFileOpt.get();
-            File file = new File("C:/reboundFile/" + deleteFile.getFilePath(), deleteFile.getFileName());
+            File file = new File("/home/ubuntu/upload_file/" + deleteFile.getFilePath(), deleteFile.getFileName());
             if (file.exists()) {
                 file.delete();
             }
@@ -140,7 +140,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public FileDTO saveProfileFile(MultipartFile file, Long memberId) throws IOException {
         String todayPath = getPath();
-        String rootPath = "C:/reboundFile/" + todayPath;
+        String rootPath = "/home/ubuntu/upload_file/" + todayPath;
 
         if (file.isEmpty()) {
             throw new IllegalArgumentException("파일이 비어있습니다.");

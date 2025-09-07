@@ -3,7 +3,7 @@ const banner = document.querySelector("div.slick-track");
 const firstBanner = document.createElement("div");
 const lastBanner = document.createElement("div");
 const bannerButtons = document.querySelectorAll("div.slide-button");
-const totalBanners = 5;
+const totalBanners = 3;
 let bannercount = 1;
 const indicator = document.querySelector("div.indicator");
 
@@ -238,11 +238,11 @@ firstBanner.innerHTML = `<div class="slick-slide slick-cloned" tabindex="-1" dat
                                 </div>
                             </div>
                         </div>`;
-lastBanner.innerHTML = `<div class="slick-slide slick-cloned" tabindex="-1" data-index="5" area-hidden="true" style="width: 970px;">
+lastBanner.innerHTML = `<div class="slick-slide slick-cloned" tabindex="-1" data-index="3" area-hidden="true" style="width: 970px;">
                             <div>
                                 <div class="banner-item" style="width: 100%; display: inline-block;">
                                     <div>
-                                        <img src="/images/main/banner5.png" alt="" class="banner-image">
+                                        <img src="/images/main/banner3.png" alt="" class="banner-image">
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@ const autoSlide = () => {
     banner.style.transform = `translate(-${970 * bannercount}px)`;
     banner.style.transition = `transform 0.5s`;
 
-    if (bannercount === 6) {
+    if (bannercount === 4) {
         setTimeout(() => {
             banner.style.transform = `translate(-970px)`;
             banner.style.transition = `transform 0s`;
@@ -303,13 +303,13 @@ bannerButtons.forEach((bannerButton) => {
                     banner.style.transform = `translate(-4850px)`;
                     banner.style.transition = `transform 0s`;
                 }, 500);
-                bannercount = 5;
+                bannercount = 3;
             }
         } else {
             bannercount++;
             banner.style.transform = `translate(-${970 * bannercount}px)`;
             banner.style.transition = `transform 0.5s`;
-            if (bannercount === 6) {
+            if (bannercount === 4) {
                 setTimeout(() => {
                     banner.style.transform = `translate(-970px)`;
                     banner.style.transition = `transform 0s`;

@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://3.35.37.32:3306/app?useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://13.209.98.10:3306/app?useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     username: rebound
     password: 1234
   servlet:
@@ -17,8 +17,8 @@ spring:
     host: smtp.gmail.com
     port: 587
 #    username, password 각자 이메일과 앱 비밀번호로 입력하시면 됩니다.
-    username:
-    password:
+    username: hjjung990927
+    password: tzxh ixce mkpb perc
     properties:
       mail:
         smtp:

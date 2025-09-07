@@ -35,8 +35,8 @@ public class KakaoService {
             connection.setDoOutput(true);
 
             stringBuilder.append("grant_type=authorization_code");
-            stringBuilder.append("&client_id=3eb5afdbd2f6bda660c49ef1b4ea5cd4");
-            stringBuilder.append("&redirect_uri=http://localhost:10000/kakao/login");
+            stringBuilder.append("&client_id=55e5cc795fb2a9b046272e34ed52d118");
+            stringBuilder.append("&redirect_uri=http://13.125.213.73/kakao/login");
             stringBuilder.append("&code=").append(code);
 
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
@@ -86,6 +86,9 @@ public class KakaoService {
                 while ((line = bufferedReader.readLine()) != null) {
                     result += line;
                 }
+
+                log.info("kakao user info: {}", result);
+
                 JsonElement jsonElement = JsonParser.parseString(result);
                 JsonElement kakaoAccount = jsonElement.getAsJsonObject().get("kakao_account").getAsJsonObject();
                 JsonElement profile = kakaoAccount.getAsJsonObject().get("profile");
@@ -131,5 +134,3 @@ public class KakaoService {
         }
     }
 }
-
-//테스트용pr

@@ -34,14 +34,14 @@
 <body>
 
   <th:block th:if="${session.member != null}">
-    <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    <header th:replace="~{main-page/header2.html :: #app-header}"></header>
   </th:block>
   <th:block th:unless="${session.member !=null}">
-    <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    <header th:replace="~{main-page/header.html :: #app-header}"></header>
   </th:block>
   <img src="/images/service/회사소개이미지.png" alt="" class="full-width-image">
   <img src="/images/service/service-intro-img.jpg" alt="" class="centered-image">
-  <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+  <footer th:replace="~{main-page/footer}"></footer>
 
 </body>
 <script th:inline="javascript">

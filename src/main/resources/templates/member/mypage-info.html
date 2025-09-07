@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/main-page/footer.css">
 </head>
 <body>
-<header th:replace="~{/main-page/header2 :: #app-header}"></header>
+<header th:replace="~{main-page/header2 :: #app-header}"></header>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">개인 정보 관리</h1>
@@ -55,36 +55,10 @@
                         <button type="button" id="emailButton" class="select-3 check">저장하기</button>
                     </div>
                 </form>
-<!--                <form class="wrap third">-->
-<!--                    <div class="main-4">비밀번호-->
-<!--                        <button type="button" class="main-5 third">수정</button>-->
-<!--                    </div>-->
-<!--                    <div class="main-6">-->
-<!--                        <p class="main-7">*********</p>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--                <form class="sub third">-->
-<!--                    <div class="main-4">기존 비밀번호</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="main-4">새로운 비밀번호</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="main-4">새로운 비밀번호 확인</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="select-1">-->
-<!--                        <button id="cancle3" type="button" class="select-2">취소</button>-->
-<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
-<!--                    </div>-->
-<!--                </form>-->
             </div>   
         </div>
     </main>
-<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+<footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script src="/js/member/mypage-info/module/service.js"></script>
 <script src="/js/member/mypage-info/module/layout.js"></script>

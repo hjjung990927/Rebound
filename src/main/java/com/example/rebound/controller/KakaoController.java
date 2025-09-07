@@ -8,6 +8,7 @@ import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class KakaoController {
 
     private final KakaoService kakaoService;
@@ -37,6 +39,9 @@ public class KakaoController {
 
         MemberDTO kakaoMember = foundMemberOpt.get();
         Optional<MemberDTO> foundKakaoMember = memberService.findMemberByKakaoEmail(kakaoMember.getKakaoEmail());
+
+        log.info("kakao email: {}", kakaoMember.getKakaoEmail());
+        log.info("foundKakaoMember: {}", foundKakaoMember);
 
         if (foundKakaoMember.isEmpty()) {
             kakaoMember.setMemberProvider(Provider.KAKAO);

@@ -19,3 +19,4 @@ select * from tbl_post;
 
 # select * from tbl_comment c join tbl_comment_alarm ca
 # on c.id = ca.comment_id and ca.member_id = #{id}
+delete from tbl_comment_alarm where member_id = 2;

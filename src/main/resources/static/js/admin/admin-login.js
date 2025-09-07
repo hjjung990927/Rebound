@@ -7,13 +7,12 @@ const loginButton = document.querySelector(".btn-login");
 const email = document.querySelector('input[name="memberEmail"]');
 const pw = document.querySelector('input[name="memberPassword"]');
 const modalText = document.querySelector("div[class=body]");
+const path =
+    console.log(window.location.href.includes("error"));
+if (window.location.href.includes("error")){
+    modal.classList.add("active");
+}
 
-// 자동로그인 클릭 이벤트
-auto_login_checkbox.addEventListener("change", () => {
-    auto_login_icon.style.display = auto_login_checkbox.checked
-        ? "block"
-        : "none";
-});
 email.addEventListener("blur",(e)=>{
     if(e.target.value===""){
         modal.classList.add("active");

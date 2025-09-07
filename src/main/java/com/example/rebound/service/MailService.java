@@ -45,7 +45,7 @@ public class MailService {
 
         StringBuilder body = new StringBuilder();
         body.append("<html><body>");
-        body.append("<a href=\"http://localhost:10000/mail/confirm?code=" + code + "&memberEmail=" + mail + "\">새로운 비밀번호로 변경하기</a>");
+        body.append("<a href=\"http://54.180.91.136:10000/mail/confirm?code=" + code + "&memberEmail=" + mail + "\">새로운 비밀번호로 변경하기</a>");
         body.append("</body></html>");
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();

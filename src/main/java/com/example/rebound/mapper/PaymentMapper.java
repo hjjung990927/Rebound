@@ -12,7 +12,7 @@ public interface PaymentMapper {
     public void insertPayment(PaymentDTO paymentDTO);
 
 //    n번째 결제
-    public void updatePayment(PaymentDTO paymentDTO);
+    public int updatePayment(Long memberId);
 
 //    결제 찾기
     public List<PaymentDTO> selectPayment(int memberId);

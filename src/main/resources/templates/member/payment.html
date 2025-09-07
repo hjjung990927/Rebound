@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- header -->
-    <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+    <header th:replace="~{main-page/header2 :: #app-header}"></header>
     <main class="main" style="padding-top: 3.625rem">
         <div class="main-1">
             <h1 class="main-2">구독 서비스<br>결제 비용을 알려드려요</h1>
@@ -67,7 +67,7 @@
         </div>
     </main>
     <!-- footer -->
-    <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+    <footer th:replace="~{main-page/footer}"></footer>
 
     <form id="paymentForm" action="/pay" method="post">
         <input type="hidden" name="subscribePrice" id="subscribePrice">

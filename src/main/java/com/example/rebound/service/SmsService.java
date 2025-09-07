@@ -31,16 +31,16 @@ public class SmsService {
         String code = createCode();
 
 //        각자 api key 입력
-        String api_key = "";
-        String api_secret = "";
+        String api_key = "NCSUUCWS4CL3Q8AZ";
+        String api_secret = "IC206OKQZUXLNSVSPAAGBSOZARN7KDEV";
         Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> params = new HashMap<>();
         params.put("to", phoneNumber);
 //        전송하는 번호 입력
-        params.put("from", "");
+        params.put("from", "01055767406");
         params.put("type", "SMS");
-        params.put("text", "인증번호: " + code);
+        params.put("text", "Rebound 인증번호: " + code);
         params.put("app_version", "test app 1.2");
 
         try {

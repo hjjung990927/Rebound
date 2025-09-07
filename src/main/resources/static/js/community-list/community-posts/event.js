@@ -131,59 +131,6 @@ hoverArea.addEventListener("mouseleave", (e) => {
     nextButton.style.visibility = "hidden";
 });
 
-// 최신 사진 리뷰
-// const communityReview = document.querySelector(
-//     "section.community-review-section div.slick-slider div.slick-list"
-// );
-// const reviewPrevButton = document.querySelector(
-//     "div.d-none.slick-initialized button.slick-arrow.slick-prev"
-// );
-// const reviewNextButton = document.querySelector(
-//     "div.d-none.slick-initialized button.slick-arrow.slick-next"
-// );
-// let reviewCount = 0;
-//
-// reviewPrevButton.style.visibility = "hidden";
-// reviewNextButton.style.visibility = "visible";
-//
-// reviewPrevButton.addEventListener("click", (e) => {
-//     if (reviewCount > 0) {
-//         reviewCount--;
-//         communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
-//         communityReview.style.transition = `transform 0.5s`;
-//     }
-//
-//     if (reviewCount > 0) {
-//         reviewPrevButton.style.visibility = "visible";
-//     } else {
-//         reviewPrevButton.style.visibility = "hidden";
-//     }
-//     if (reviewCount < 2) {
-//         reviewNextButton.style.visibility = "visible";
-//     } else {
-//         reviewNextButton.style.visibility = "hidden";
-//     }
-// });
-//
-// reviewNextButton.addEventListener("click", (e) => {
-//     if (reviewCount < 2) {
-//         reviewCount++;
-//         communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
-//         communityReview.style.transition = `transform 0.5s`;
-//     }
-//
-//     if (reviewCount > 0) {
-//         reviewPrevButton.style.visibility = "visible";
-//     } else {
-//         reviewPrevButton.style.visibility = "hidden";
-//     }
-//     if (reviewCount < 2) {
-//         reviewNextButton.style.visibility = "visible";
-//     } else {
-//         reviewNextButton.style.visibility = "hidden";
-//     }
-// });
-
 // 위로 가기 버튼 나타나기/숨기기
 const topButton = document.getElementById("top-btn");
 

@@ -7,11 +7,11 @@
     </insert>
 
     <update id="updatePayment">
-        update tbl_payment
-        set payment_update_date = NOW()
-        where id = #{id};
+        update tbl_payment p join tbl_member m on p.member_id = m.id
+        set m.member_grade = 'subscribe'
+        where m.id = #{memberId};
     </update>
-
+    
     <select id="selectPayment">
         select id, created_date, updated_date, payment_start_date, payment_update_date, subscribe_id, member_id
         from tbl_payment

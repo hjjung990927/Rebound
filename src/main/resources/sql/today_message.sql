@@ -12,3 +12,6 @@ create table tbl_today_message
 
 select * from tbl_today_message;
 
+insert into tbl_today_message(today_message_content, counselor_id)
+values ('힘든 순간도 있지만, 그 속에서 조금씩 단단해지고 있습니다.', 1);
+

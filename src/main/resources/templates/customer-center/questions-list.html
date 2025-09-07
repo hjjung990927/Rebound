@@ -20,10 +20,10 @@
 </head>
 <body>
     <th:block th:if="${session.member != null}">
-        <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+        <header th:replace="~{main-page/header2 :: #app-header}"></header>
     </th:block>
-    <th:block th:unless="${session.member !=null}">
-        <header th:replace="~{/main-page/header :: #app-header}"></header>
+    <th:block th:unless="${session.member != null}">
+        <header th:replace="~{main-page/header :: #app-header}"></header>
     </th:block>
     <main role="main">
         <div class="container-divider"></div>
@@ -94,7 +94,7 @@
             </div>
         </div>
     </main>
-    <footer th:replace="~{/main-page/footer.html}"></footer>
+    <footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script src="/js/customer-center/questions-list.js"></script>
 </html>

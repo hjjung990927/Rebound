@@ -20,10 +20,10 @@
 </head>
 <body>
 <th:block th:if="${session.member != null || session.counselor != null}">
-            <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+            <header th:replace="~{main-page/header2 :: #app-header}"></header>
         </th:block>
         <th:block th:unless="${session.member !=null || session.counselor != null}">
-            <header th:replace="~{/main-page/header :: #app-header}"></header>
+            <header th:replace="~{main-page/header :: #app-header}"></header>
         </th:block>
     <main class="main">
         <div class="main-1">
@@ -67,54 +67,10 @@
                         <button type="submit" id="emailButton" class="select-3">저장하기</button>
                     </div>
                 </form>
-<!--                <form class="wrap third">-->
-<!--                    <div class="main-4">비밀번호-->
-<!--                        <button type="button" class="main-5 third">수정</button>-->
-<!--                    </div>-->
-<!--                    <div class="main-6">-->
-<!--                        <p class="main-7">*********</p>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--                <form class="sub third">-->
-<!--                    <div class="main-4">기존 비밀번호</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="main-4">새로운 비밀번호</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="main-4">새로운 비밀번호 확인</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input  type="password" class="main-7" value="">-->
-<!--                    </div>-->
-<!--                    <div class="select-1">-->
-<!--                        <button id="cancle3" type="button" class="select-2">취소</button>-->
-<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--                <form class="wrap second">-->
-<!--                    <div class="main-4">상담 주소-->
-<!--                        <button type="button" class="main-5 second">수정</button>-->
-<!--                    </div>-->
-<!--                    <div class="main-6">-->
-<!--                        <p class="main-7">서울시 강남구 역삼동 여기저기</p>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--                <form class="sub second">-->
-<!--                    <div class="main-4">상담 주소</div>-->
-<!--                    <div class="main-6">-->
-<!--                        <input id="insert2" type="text" class="main-7" value="서울시 강남구 역삼동 여기저기">-->
-<!--                    </div>-->
-<!--                    <div class="select-1">-->
-<!--                        <button id="cancle2" type="button" class="select-2">취소</button>-->
-<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
-<!--                    </div>-->
-<!--                </form>-->
             </div>
         </div>
     </main>
-<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+<footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script src="/js/counselor/mypage-info/module/service.js"></script>
 <script src="/js/counselor/mypage-info/module/layout.js"></script>

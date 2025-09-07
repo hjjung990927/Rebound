@@ -12,12 +12,11 @@
 </head>
 <body>
 <th:block th:if="${session.member != null || session.counselor != null}">
-            <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+            <header th:replace="~{main-page/header2 :: #app-header}"></header>
         </th:block>
         <th:block th:unless="${session.member !=null || session.counselor != null}">
-            <header th:replace="~{/main-page/header :: #app-header}"></header>
+            <header th:replace="~{main-page/header :: #app-header}"></header>
         </th:block>
-    <!--------------------------------------------------------------------------------------------->
     <main class="main">
         <div class="main-1">
             <p class="main-2">마이페이지</p>
@@ -54,32 +53,6 @@
                         <h6 class="main-15">커뮤니티</h6>
                     </div>
                 </div>
-<!--                <ul>-->
-<!--                    <li>-->
-<!--                        <a href="/member/mypage/post">-->
-<!--                        <div role="button" tabindex="0" class="main-16">-->
-<!--                            <div class="main-17">-->
-<!--                                <span class="main-18">나의 작성글</span>-->
-<!--                            </div>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" color="#AAB4BF">-->
-<!--                                <path fill="none" stroke="#B5B5B5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 14 5-5-5-5"></path>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="/member/mypage/reply">-->
-<!--                        <div role="button" tabindex="0" class="main-16">-->
-<!--                            <div class="main-17">-->
-<!--                                <span class="main-18">나의 댓글</span>-->
-<!--                            </div>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" color="#AAB4BF">-->
-<!--                                <path fill="none" stroke="#B5B5B5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m7 14 5-5-5-5"></path>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                </ul>-->
             </section>
             <section class="main-4">
                 <div class="main-13">
@@ -94,8 +67,6 @@
                             <div class="main-17">
                                 <span class="main-18">구독 결제</span>
                                 <div class="main-11">
-<!--                                <span  style="font-size: 14px; margin-top: 7px; width: 100px;">구독 만료일</span>-->
-<!--                                <span  style="font-size: 14px; margin-top: 7px;width: 465px;"></span>-->
                                 </div>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" color="#AAB4BF">
@@ -129,7 +100,7 @@
             </section>
         </div>
     </main>
-<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+<footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script th:inline="javascript">
     const memberid = [[${session.member.id}]];

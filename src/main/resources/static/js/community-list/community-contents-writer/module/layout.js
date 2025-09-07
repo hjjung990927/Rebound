@@ -40,18 +40,11 @@ const commentLayout = (() => {
                 displayGrade = '일반회원';
             }
 
-            let fileUrl;
-            if(comment.memberProvider === 'KAKAO' || !comment.filePath) {
-                fileUrl = '/images/member/no-profile.png';
-            } else {
-                fileUrl = `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}`;
-            }
-
             text += `
             <li class="id${comment.id} post-comments-list-item">   
                 <div class="post-comment-wrapper">
                     <div class="profile-image provider">
-                        <img alt="${comment.memberName}" class="image" src="${fileUrl}">
+                        <img alt="${comment.memberName}" class="image" src="${`/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}`}">
                     </div>
                     <div class="comment-information">
                         <div class="user-info provider">

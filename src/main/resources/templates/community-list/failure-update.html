@@ -15,7 +15,7 @@
         <div class="community-container container">
             <div class="soomgo-life-container">
                 <!-- update form -->
-                <form th:action="@{community-list/failure-update}" method="post" th:object="${post}">
+                <form th:action="@{/community-list/failure-update}" method="post" th:object="${post}">
                     <input type="hidden" name="id" th:value="*{id}">
                     <section class="write-post-container">
                         <div class="select-subject-header">

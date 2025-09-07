@@ -36,7 +36,7 @@ public class FileController {
             @RequestParam String fileName
     ) {
         try {
-            String fullPath = "C:/reboundFile/" + filePath + "/" + fileName;
+            String fullPath = "/home/ubuntu/upload_file/" + filePath + "/" + fileName;
             File file = new File(fullPath);
 
             if (!file.exists() || !file.isFile()) {

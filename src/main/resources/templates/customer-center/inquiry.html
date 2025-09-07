@@ -20,10 +20,10 @@
 </head>
 <body>
     <th:block th:if="${session.member != null}">
-        <header th:replace="~{/main-page/header2 :: #app-header}"></header>
+        <header th:replace="~{main-page/header2 :: #app-header}"></header>
     </th:block>
     <th:block th:unless="${session.member !=null}">
-        <header th:replace="~{/main-page/header :: #app-header}"></header>
+        <header th:replace="~{main-page/header :: #app-header}"></header>
     </th:block>
     <main role="main" style="height: 1000px">
         <div class="container-divider"></div>
@@ -96,7 +96,7 @@
             </div>
         </div>
     </main>
-    <footer th:replace="~{/main-page/footer.html}"></footer>
+    <footer th:replace="~{main-page/footer}"></footer>
 </body>
 <script th:inline="javascript">
     const member = [[${session.member}]]

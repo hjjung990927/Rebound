@@ -63,13 +63,13 @@ public class AdminController {
                 response.addCookie(rememberCookie);
             }
 
-            return new RedirectView("admin/admin-mainPage");
-        };return new RedirectView("admin/admin-login");
+            return new RedirectView("/admin/admin-mainpage");
+        };return new RedirectView("/admin/admin-login?error=error");
     }
 //    관리자 메인페이지 이동
-    @GetMapping("admin-mainPage")
+    @GetMapping("admin-mainpage")
     public String goToAdminMainPage(){
-        return "admin/admin-mainPage";
+        return "admin/admin-mainpage";
     }
 //    관리자 공지사항 목록 이동
     @GetMapping("notice-list/{page}")
@@ -82,7 +82,7 @@ public class AdminController {
         System.out.println(adminService.noticeDetail(id));
         model.addAttribute("notice",adminService.noticeDetail(id));
         System.out.println(model);
-        return "/admin/notice-detail";
+        return "admin/notice-detail";
     }
 //    상담하기 목록 이동
     @GetMapping("counseling-list/{page}")

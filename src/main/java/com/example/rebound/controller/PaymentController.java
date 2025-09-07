@@ -33,7 +33,7 @@ public class PaymentController {
     @PostMapping(value = "")
     public RedirectView insertPayment(SubscribeDTO subscribeDTO) {
         paymentService.insertPayment(subscribeDTO);
-        return new RedirectView("member/mypage");
+        return new RedirectView("/member/mypage");
     }
 
 }

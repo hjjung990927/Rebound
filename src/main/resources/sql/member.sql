@@ -22,5 +22,18 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
+select * from tbl_member_profile_file;
 select * from tbl_member;
+select * from tbl_comment_alarm;
+select * from tbl_comment;
+select * from tbl_like;
+select * from tbl_post;
 
+delete from tbl_member where id = 138;
+delete from tbl_like where member_id = 138;
+delete from tbl_comment where comment_status = 'inactive';
+delete from tbl_post where post_status = 'active';
+delete from tbl_comment_alarm where member_id = 131;
+
+insert into tbl_member (member_name, member_email, member_phone_number, member_password, member_status, member_common)
+values ('admin', 'admin@gmail.com', '01012345678', '1234', 'active', 'admin');

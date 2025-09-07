@@ -10,13 +10,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @EqualsAndHashCode(of = "id")
 public class TodayMessageVO extends Period {
-//    id                    bigint unsigned auto_increment
-//    primary key,
-//    today_message_content varchar(255)                       not null,
-//    created_date          datetime default CURRENT_TIMESTAMP null,
-//    updated_date          datetime default CURRENT_TIMESTAMP null,
-//    counselor_id          bigint unsigned                    null,
     private Long id;
+    private String todayMessageTitle;
     private String todayMessageContent;
     private Long counselorId;
+    private String counselorName;
 }

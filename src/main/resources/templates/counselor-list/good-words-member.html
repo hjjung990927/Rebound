@@ -12,290 +12,74 @@
     <title>오늘의 좋은 말</title>
 </head>
 <body>
-    <!-- header -->
-    <th:block th:if="${session.member != null || session.counselor != null}">
-        <header th:replace="~{main-page/header2 :: #app-header}"></header>
-    </th:block>
-    <th:block th:unless="${session.member !=null || session.counselor != null}">
-        <header th:replace="~{main-page/header :: #app-header}"></header>
-    </th:block>
-    <div id="app-body">
-        <div id="top"></div>
-        <div class="community-container container">
-            <div class="pro-knowhow-container">
-                <section id="pro-knowhow" class="pro-knowhow">
-                    <!-- body 헤더 -->
-                    <div class="observer-container">
-                        <section data-observe="pro-knowhow-header" class="pro-knowhow-header" id="pro-knowhow-header">
-                            <h1 class="pro-knowhow-title">오늘의 좋은 말</h1>
-                            <!-- 글쓰기 버튼 -->
-                            <div>
-                                <div class="write-button-desktop">
-                                    <div class="dropdown b-dropdown btn-group" id="__BVID__924">
-                                        <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-primary" id="__BVID__924__BV_toggle_">글쓰기</button>
-                                    </div>
+<!-- header -->
+<th:block th:if="${session.member != null || session.counselor != null}">
+    <header th:replace="~{main-page/header2.html :: #app-header}"></header>
+</th:block>
+<th:block th:unless="${session.member !=null || session.counselor != null}">
+    <header th:replace="~{main-page/header.html :: #app-header}"></header>
+</th:block>
+<div id="app-body">
+    <div id="top"></div>
+    <div class="community-container container">
+        <div class="pro-knowhow-container">
+            <section id="pro-knowhow" class="pro-knowhow">
+                <!-- body 헤더 -->
+                <div class="observer-container">
+                    <section data-observe="pro-knowhow-header" class="pro-knowhow-header" id="pro-knowhow-header">
+                        <h1 class="pro-knowhow-title">오늘의 좋은 말</h1>
+                        <!-- 글쓰기 버튼 -->
+                        <div>
+                            <div class="write-button-desktop">
+                                <div class="dropdown b-dropdown btn-group" id="__BVID__924">
+                                    <th:block th:if="${session.counselor != null}">
+                                        <button onclick="window.location.href='/counselor-list/good-words-write'" aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-primary" id="__BVID__924__BV_toggle_">글쓰기</button>
+                                    </th:block>
+                                    <th:block th:unless="${session.counselor != null}">
+                                        <button name="noLog" aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-primary" id="__BVID__924__BV_toggle_">글쓰기</button>
+                                    </th:block>
                                 </div>
                             </div>
-                        </section>
-                        <!-- 헤더 밑줄 -->
-                        <ul class="category"></ul>
-                    </div>
-                    <section class="topic-list-menu d-none d-sm-block"></section>
-                    <div class="community-layout">
-                        <div class="community-content-layout" style="margin-left: 184.84px; margin-right: 184.84px;">
-                            <!-- 최상단 텍스트 블록 -->
-                            <div class="topic-guide-banner-container pro-knowhow">
-                                <p class="guideline">리바운드의 상담사님들이 작성한 오늘의 좋은 말을 확인해보세요</p>
-                                <img src="data:image/svg+xml,%3csvg%20width='72'%20height='40'%20viewBox='0%200%2072%2040'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cpath%20d='M42.69%200h15.228c1.757%200%203.43.348%204.951.977C68.213%203.02%2072%208.074%2072%2013.999c0%207.092-5.418%2013.065-12.445%2013.986-1.021.134-1.937-.631-1.937-1.635v-1.645H42.69c-7.008%200-12.69-5.53-12.69-12.353C30%205.531%2035.682%200%2042.69%200'%20fill='%23FBADB1'/%3e%3cg%20transform='translate(41%2011)'%20fill='%23FFF'%3e%3ccircle%20cx='2'%20cy='2'%20r='2'/%3e%3ccircle%20cx='10'%20cy='2'%20r='2'/%3e%3ccircle%20cx='18'%20cy='2'%20r='2'/%3e%3c/g%3e%3cg%3e%3cpath%20d='M29.31%2012H14.082c-1.757%200-3.43.348-4.951.977C3.787%2015.02%200%2020.074%200%2025.999c0%207.092%205.418%2013.065%2012.445%2013.986%201.021.134%201.937-.631%201.937-1.635v-1.645H29.31c7.008%200%2012.69-5.53%2012.69-12.353C42%2017.531%2036.318%2012%2029.31%2012'%20fill='%23FF868D'/%3e%3cpath%20d='M15.667%2022.25h-.89c-.981%200-1.777.783-1.777%201.75v5.25c0%20.967.796%201.75%201.778%201.75h.889c.49%200%20.889-.392.889-.875v-7a.882.882%200%200%200-.89-.875m11.556%200h-4.444l.734-2.706a1.737%201.737%200%200%200-.738-1.88l-.787-.517a.897.897%200%200%200-1.288.337l-2.004%204.039a3.456%203.456%200%200%200-.361%201.536v6.191c0%20.967.795%201.75%201.777%201.75h6.044c.847%200%201.577-.589%201.743-1.407l1.067-5.25c.22-1.082-.622-2.093-1.743-2.093'%20fill='%23E5464F'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" class="guide-icon">
-                            </div>
-                            <article class="pro-knowhow-list">
-                                <!-- 오늘의 좋은 말 목록 -->
-                                <ul class="feed-list card-list">
-                                    <!-- 오늘의 좋은 말 -->
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                    <li data-testid="pro-knowhow-list-item" class="pro-knowhow-list-item">
-                                        <section class="item-wrapper">
-                                            <a href="">
-                                                <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
-                                                    <div class="item-wrapper-text">
-                                                        <div class="text01">오늘의 좋은 말 머리글입니다.</div>
-                                                        <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
-                                                    </div>
-                                                </figure>
-                                                <p class="content-writer">상담사 이름</p>
-                                            </a>
-                                        </section>
-                                    </li>
-                                </ul>
-                            </article>
                         </div>
+                    </section>
+                    <!-- 헤더 밑줄 -->
+                    <ul class="category"></ul>
+                </div>
+                <section class="topic-list-menu d-none d-sm-block"></section>
+                <div class="community-layout">
+                    <div class="community-content-layout" style="margin-left: 184.84px; margin-right: 184.84px;">
+                        <!-- 최상단 텍스트 블록 -->
+                        <div class="topic-guide-banner-container pro-knowhow">
+                            <p class="guideline">리바운드의 상담사님들이 작성한 오늘의 좋은 말을 확인해보세요</p>
+                            <img src="data:image/svg+xml,%3csvg%20width='72'%20height='40'%20viewBox='0%200%2072%2040'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cpath%20d='M42.69%200h15.228c1.757%200%203.43.348%204.951.977C68.213%203.02%2072%208.074%2072%2013.999c0%207.092-5.418%2013.065-12.445%2013.986-1.021.134-1.937-.631-1.937-1.635v-1.645H42.69c-7.008%200-12.69-5.53-12.69-12.353C30%205.531%2035.682%200%2042.69%200'%20fill='%23FBADB1'/%3e%3cg%20transform='translate(41%2011)'%20fill='%23FFF'%3e%3ccircle%20cx='2'%20cy='2'%20r='2'/%3e%3ccircle%20cx='10'%20cy='2'%20r='2'/%3e%3ccircle%20cx='18'%20cy='2'%20r='2'/%3e%3c/g%3e%3cg%3e%3cpath%20d='M29.31%2012H14.082c-1.757%200-3.43.348-4.951.977C3.787%2015.02%200%2020.074%200%2025.999c0%207.092%205.418%2013.065%2012.445%2013.986%201.021.134%201.937-.631%201.937-1.635v-1.645H29.31c7.008%200%2012.69-5.53%2012.69-12.353C42%2017.531%2036.318%2012%2029.31%2012'%20fill='%23FF868D'/%3e%3cpath%20d='M15.667%2022.25h-.89c-.981%200-1.777.783-1.777%201.75v5.25c0%20.967.796%201.75%201.778%201.75h.889c.49%200%20.889-.392.889-.875v-7a.882.882%200%200%200-.89-.875m11.556%200h-4.444l.734-2.706a1.737%201.737%200%200%200-.738-1.88l-.787-.517a.897.897%200%200%200-1.288.337l-2.004%204.039a3.456%203.456%200%200%200-.361%201.536v6.191c0%20.967.795%201.75%201.777%201.75h6.044c.847%200%201.577-.589%201.743-1.407l1.067-5.25c.22-1.082-.622-2.093-1.743-2.093'%20fill='%23E5464F'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" class="guide-icon">
+                        </div>
+                        <article class="pro-knowhow-list">
+                            <!-- 오늘의 좋은 말 목록 -->
+                            <ul id="todayWrap" class="feed-list card-list">
+                            </ul>
+                            <div id="blind"></div>
+                        </article>
                     </div>
-                    <a href="#top" id="top-btn" role="button" aria-label="위로 가기 버튼" class="top-btn" style="right: 892px;">
-                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath%20d='M0%200H24V24H0z'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)'/%3e%3cg%20stroke='%23B5B5B5'%20stroke-linecap='round'%20stroke-width='1.5'%3e%3cpath%20d='M7%200L7%2015'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3cpath%20stroke-linejoin='round'%20d='M0%207L7%200%2014%207'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="위로 가기">
-                    </a>
-                </section>
-            </div>
-            <div class="v-portal" style="display: none;"></div>
+                </div>
+                <!-- 위로 가기 버튼 -->
+                <a href="#top" id="top-btn" role="button" aria-label="위로 가기 버튼" class="top-btn" style="right: 892px;">
+                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath%20d='M0%200H24V24H0z'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)'/%3e%3cg%20stroke='%23B5B5B5'%20stroke-linecap='round'%20stroke-width='1.5'%3e%3cpath%20d='M7%200L7%2015'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3cpath%20stroke-linejoin='round'%20d='M0%207L7%200%2014%207'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="위로 가기">
+                </a>
+            </section>
         </div>
+        <div class="v-portal" style="display: none;"></div>
     </div>
-    <!-- footer -->
-    <footer th:replace="~{main-page/footer}"></footer>
+</div>
+<!-- footer -->
+<footer th:replace="~{main-page/footer.html :: #app-footer}"></footer>
 </body>
 <script th:inline="javascript">
     const member = [[${session.member}]]
     const counselor = [[${session.counselor}]]
     const commentAlarms = [[${commentAlarms}]];
 </script>
-<script src="/js/counselor-list/good-words.js"></script>
+<script src="/js/counselor-list/good-words/module/layout.js"></script>
+<script src="/js/counselor-list/good-words/module/service.js"></script>
+<script src="/js/counselor-list/good-words/good-words.js"></script>
 <script src="/js/main-page/header2.js"></script>
 </html>

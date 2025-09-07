@@ -11,6 +11,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode(of="id")
 public class TodayMessageMemberDTO {
+    private Long id;
     private List<TodayMessageDTO> todayMessages;
     private String mentor;
 }

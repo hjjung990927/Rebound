@@ -1,5 +1,11 @@
+service.getToday(layout.showList);
 // 위로 가기 버튼 나타나기/숨기기
+const noLog = document.querySelector("button[name=noLog]");
 const topButton = document.querySelector("a#top-btn.top-btn");
+
+noLog.addEventListener("click",(e)=>{
+    alert("상담사 로그인이 필요합니다.");
+});
 
 topButton.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 topButton.style.opacity = 0;

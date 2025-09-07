@@ -5,70 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/font/admin/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/counselor-list/good-words-write.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
     <title>오늘의 좋은 말 작성</title>
 </head>
 <body>
-    <div id="__next">
-        <!-- 상단 -->
-        <main class="main-container">
-            <div class="container-div">
-                <h1 class="good-words-header">오늘의 좋은 글 작성하기</h1>
-                <div class="good-words">
-                    <div class="good-words-top" style="padding-top: 40px;">
-                        <h2 class="top-h2">상세 내용을 작성해 주세요</h2>
-                        <form data-gtm-form-interact-id="0">
-                            <div class="good-words-body">
-                                <!-- 본문 머리글 -->
-                                <fieldset class="body-header">
-                                    <legend class="body-header-legend">본문 머리글</legend>
-                                    <input name="sections.0.title" placeholder="본문 머리글을 적어주세요." maxlength="30" class="body-header-input">
-                                    <div class="input-text-number">
-                                        <span class="input-text-check">최소 8자 이상, 최대 30자까지 입력해주세요.</span>
-                                        <span class="text-number01"><span class="text-number02">0</span>/30</span>
-                                    </div>
-                                </fieldset>
-                                <!-- 본문 내용 -->
-                                <fieldset class="body-content">
-                                    <legend class="body-header-legend">본문 내용</legend>
-                                    <textarea name="sections.0.body" placeholder="하루의 힘이 되어주는 문구, 혹은 이용자들에게 하고 싶은 이야기를 작성해 주세요.
-                                    
+<div id="__next">
+    <!-- 상단 -->
+    <main class="main-container">
+        <div class="container-div">
+            <h1 class="good-words-header">오늘의 좋은 말 작성하기</h1>
+            <div class="good-words">
+                <div class="good-words-top" style="padding-top: 40px;">
+                    <h2 class="top-h2">오늘의 좋은 말을 작성해 주세요</h2>
+                    <form action="/counselor-list/good-words-write" method="post" data-gtm-form-interact-id="0">
+                        <div class="good-words-body">
+                            <!-- 본문 머리글 -->
+                            <fieldset class="body-header">
+                                <legend class="body-header-legend">오늘의 좋은 말 제목</legend>
+                                <input type="text" name="todayMessageTitle" placeholder="오늘의 좋은 말 제목을 적어주세요." maxlength="30" class="body-header-input">
+                                <div class="input-text-number">
+                                    <span class="input-text-check">최소 8자 이상, 최대 30자까지 입력해주세요.</span>
+                                    <span class="text-number01"><span class="text-number02">0</span>/30</span>
+                                </div>
+                            </fieldset>
+                            <!-- 본문 내용 -->
+                            <fieldset class="body-content">
+                                <legend class="body-header-legend">본문 내용</legend>
+                                <textarea name="todayMessageContent" placeholder="하루의 힘이 되어주는 문구, 혹은 이용자들에게 하고 싶은 이야기를 작성해 주세요.
+
 ※ 좋은 말과 별개로 지나친 광고성 글은 삭제됩니다
 ※ 이메일, 전화번호, 카카오톡, 주소 등의 개인정보가 포함된 글은 삭제됩니다" rows="10" wrap="soft" maxlength="500" class="body-content-text"></textarea>
-                                    <div class="input-text-number">
-                                        <span class="input-text-check">최소 25자 이상, 최대 500자까지 입력해주세요.</span>
-                                        <span class="text-number01"><span class="text-number02">0</span>/500</span>
-                                    </div>
-                                </fieldset>
-                            </div>
-                            <!-- 확인 내용 -->
-                            <div class="check-box">
-                                <p class="check-box-name">꼭 확인해 주세요!</p>
-                                <ul class="check-box-ul">
-                                    <li>등록한 오늘의 좋은 말은 프로필에서 확인할 수 있습니다.</li>
-                                    <li>상담사님이 작성한 오늘의 좋은 말은 리바운드 사용자들에게 보여집니다.</li>
-                                    <li>상담사님의 글과 프로필이 홍보될 수 있습니다.<br>(*선정 시 별도 안내 문자 발송)</li>
-                                    <li>좋은 말과 별개로 지나친 광고성 글은 삭제됩니다.</li>
-                                </ul>
-                            </div>
-                            <!-- 작성 완료 버튼 -->
-                            <div class="complete-button">
-                                <button type="submit" disabled="" class="complete">작성 완료</button>
-                            </div>
-                        </form>
-                    </div>
+                                <div class="input-text-number">
+                                    <span class="input-text-check">최소 25자 이상, 최대 500자까지 입력해주세요.</span>
+                                    <span class="text-number01"><span class="text-number02">0</span>/500</span>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- 확인 내용 -->
+                        <div class="check-box">
+                            <p class="check-box-name">꼭 확인해 주세요!</p>
+                            <ul class="check-box-ul">
+                                <li>등록한 오늘의 좋은 말은 프로필에서 확인할 수 있습니다.</li>
+                                <li>상담사님이 작성한 오늘의 좋은 말은 리바운드 사용자들에게 보여집니다.</li>
+                                <li>상담사님의 글과 프로필이 홍보될 수 있습니다.<br>(*선정 시 별도 안내 문자 발송)</li>
+                                <li>좋은 말과 별개로 지나친 광고성 글은 삭제됩니다.</li>
+                            </ul>
+                        </div>
+                        <input name="counselorId" style="display: none" th:value="${session.counselor.id}">
+                        <!-- 작성 완료 버튼 -->
+                        <div class="complete-button">
+                            <button type="submit" class="complete">작성 완료</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
+</div>
 </body>
-<script src="/js/counselor-list/good-words-write.js"></script>
+<script src="/js/counselor-list/good-words/good-words-write.js"></script>
 </html>

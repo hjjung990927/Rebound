@@ -31,8 +31,10 @@ public class SmsService {
         String code = createCode();
 
 //        각자 api key 입력
-        String api_key = "NCSUUCWS4CL3Q8AZ";
-        String api_secret = "IC206OKQZUXLNSVSPAAGBSOZARN7KDEV";
+//        String api_key = "NCSUUCWS4CL3Q8AZ";
+//        String api_secret = "IC206OKQZUXLNSVSPAAGBSOZARN7KDEV";
+        String api_key = "";
+        String api_secret = "";
         Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> params = new HashMap<>();

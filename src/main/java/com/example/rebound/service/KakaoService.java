@@ -35,8 +35,10 @@ public class KakaoService {
             connection.setDoOutput(true);
 
             stringBuilder.append("grant_type=authorization_code");
-            stringBuilder.append("&client_id=55e5cc795fb2a9b046272e34ed52d118");
-            stringBuilder.append("&redirect_uri=http://13.125.213.73/kakao/login");
+//            개인 별 client_id 입력
+            stringBuilder.append("&client_id=");
+//            할당 받은 IP 주소 입력
+            stringBuilder.append("&redirect_uri=http://할당 받은 IP 주소 입력/kakao/login");
             stringBuilder.append("&code=").append(code);
 
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));

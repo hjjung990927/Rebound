@@ -40,12 +40,14 @@ public class MailService {
         response.addCookie(cookie);
 
         String receiver = mail;
-        String sender = "hjjung990927@gmail.com";
+//        개인 이메일 입력
+        String sender = "";
         String title = "Rebound 이메일 인증";
 
         StringBuilder body = new StringBuilder();
         body.append("<html><body>");
-        body.append("<a href=\"http://13.125.213.73/mail/confirm?code=" + code + "&memberEmail=" + mail + "\">새로운 비밀번호로 변경하기</a>");
+//        http://할당 받은 IP 주소 입력/mail/confirm?code=
+        body.append("<a href=\"http://할당 받은 IP 주소 입력/mail/confirm?code=" + code + "&memberEmail=" + mail + "\">새로운 비밀번호로 변경하기</a>");
         body.append("</body></html>");
 
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();

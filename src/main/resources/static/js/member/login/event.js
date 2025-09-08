@@ -52,8 +52,10 @@ show.addEventListener("click", (e) => {
     }
 });
 
-const KAKAO_CLIENT_ID = '55e5cc795fb2a9b046272e34ed52d118';
-const REDIRECT_URI = 'http://13.125.213.73/kakao/login';
+// 개인 별 client_id 입력
+const KAKAO_CLIENT_ID = '';
+// 할당 받은 IP 주소 입력
+const REDIRECT_URI = 'http://할당 받은 IP 주소/kakao/login';
 
 kakaoButton.addEventListener("click", () => {
     window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;

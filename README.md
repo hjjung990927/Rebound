@@ -1,4 +1,4 @@
-# Rebound |<a href=""> Spring Boot 프로젝트 : 소통을 통한 마음 치유 플랫폼</a>
+# Rebound |<a> 소통을 통한 마음 치유 플랫폼 </a>
 
 
 ## 🖥️ 프로젝트 소개
@@ -71,6 +71,13 @@
   - 상담사 승인/신청 목록 및 상세
   - 상담사 상담내역
   - 공지사항 목록 및 상세
+
+#### 진척도
+<img width="761" height="152" alt="화면진척도" src="https://github.com/user-attachments/assets/785f34c6-a07e-41bc-b449-64bedf304ab9" />
+
+
+<br>
+
 
 ### ▶ Back-End
 #### 커뮤니티

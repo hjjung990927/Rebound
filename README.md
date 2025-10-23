@@ -85,6 +85,8 @@
   - 새 비밀번호 변경
 
 #### 진척도
+<img width="1111" height="162" alt="진척도" src="https://github.com/user-attachments/assets/12675f96-8739-43b8-87ca-da26ee3a3aa7" />
+
 
 <br>
 

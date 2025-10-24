@@ -49,12 +49,14 @@
 - Mysql
 - Mybatis
 - AWS-EC2
+- AWS-IAM
 - Thymeleaf
 - VS Code
 - Intelli J
 - DBeaver
 - SourceTree
 - Postman
+- Kakao-Login
 - CoolSMS
 - JavaMail
 - Git(Git-hub)
@@ -67,7 +69,7 @@
 
 ## 📌 담당 업무
 ### ▶ Front-End
-#### 관리자 페이지
+#### 📷 관리자 페이지
   - 로그인
   - 메인 페이지
   - 회원 목록 및 상세
@@ -84,16 +86,17 @@
 
 
 ### ▶ Back-End
-#### 커뮤니티
+#### 📷 커뮤니티
   - 게시글 작성
-  - 게시글 목록
+  - 게시글 목록 조회
   - 게시글 상세
   - 게시글 수정/삭제
   - 댓글 작성
+  - 댓글 목록 조회
   - 댓글 수정/삭제
   - 댓글 추천
     
-#### 로그인
+#### 📷 로그인
   - 이메일 찾기
   - 비밀번호 찾기
   - 새 비밀번호 변경
